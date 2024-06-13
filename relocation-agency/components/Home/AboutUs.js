@@ -6,9 +6,9 @@ import 'aos/dist/aos.css';
 const AboutUs = () => {
   useEffect(() => {
     AOS.init({
-      duration: 2500, // Animation duration
-      easing: 'ease-out', // Easing option
-      once: false, // Set to false to animate every time the element comes into view
+      duration: 2500, 
+      easing: 'ease-out', 
+      once: false, 
     });
   }, []);
 

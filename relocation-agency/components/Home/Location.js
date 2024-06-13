@@ -1,71 +1,87 @@
-'use client'
-import React, { useEffect } from 'react';
-import Link from 'next/link';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-
+import { motion, useTransform, useScroll } from "framer-motion";
+import { useRef } from "react";
+import Link from "next/link";
 
 const Location = () => {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000, 
-      easing: 'ease-out', 
-      once: false, 
-    });
-  }, []);
+  return (
+    <HorizontalScrollCarousel />
+  );
+};
+
+const HorizontalScrollCarousel = () => {
+  const targetRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+  });
+
+  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
 
   return (
-    <section>
-      
-      <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-        <div>
-        
-        {/* <div className='text-center pt-20 py-12 text-7xl font-semibold' data-aos="fade-up">
-          <h1>Locations</h1>
-        </div> */}
-        <div className='flex flex-wrap py-16 space-x-5'>
-          {locations.map((location, index) => (
-            <Link href={`/locations/${location.name.toLowerCase()}`} key={index} className='flex-1 min-w-[200px]'>
-              <div
-                className='shadow-lg rounded overflow-hidden relative group h-80' // Set a fixed height
-                data-aos="fade-up"
-                data-aos-delay={index * 100} // Adding delay for staircase effect
-              >
-                <img className="w-full h-full object-cover" src={location.img} alt={location.name} />
-                <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <h2 className="text-white text-2xl mb-2">{location.name}</h2>
-                </div>
-              </div>
-            </Link>
+    <section ref={targetRef} className="relative h-[300vh]">
+      <div className="sticky top-0 flex h-screen items-center overflow-hidden">
+        <motion.div style={{ x }} className="flex gap-4">
+          {cards.map((card) => (
+            <Card card={card} key={card.id} />
           ))}
-        </div>
-      </div>
+        </motion.div>
       </div>
     </section>
   );
-}
+};
 
-const locations = [
-  {
-    name: 'Sri Lanka',
-    img: '/images/srilanka.jpg'
-  },
-  {
-    name: 'China',
-    img: '/images/china.jpg'
-  },
-  {
-    name: 'Taiwan',
-    img: '/images/taiwan.jpg'
-  },
-  {
-    name: 'India',
-    img: '/images/india.webp'
-  },
-  {
-    name: 'Malaysia',
-    img: '/images/malaysia.jpg'
-  }
-];
+const Card = ({ card }) => {
+  return (
+    <div className="group relative h-[450px] w-[400px] overflow-hidden bg-neutral-200 rounded-lg">
+      <div
+        style={{
+          backgroundImage: `url(${card.url})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+        className="absolute inset-0 z-0 transition-transform duration-300 group-hover:scale-110"
+      ></div>
+      <div className="absolute inset-0 z-10 grid place-content-center">
+        <Link href={card.path}
+          className="bg-gradient-to-br from-white/20 to-white/0 p-8 text-6xl font-black uppercase text-white backdrop-blur-sm">
+            {card.title}
+          
+        </Link>
+      </div>
+    </div>
+  );
+};
 
 export default Location;
+
+const cards = [
+  {
+    url: "/images/srilanka.jpg",
+    title: "Sri Lanka",
+    id: 1,
+    path: "/srilanka", 
+  },
+  {
+    url: "/images/china.jpg",
+    title: "China",
+    id: 2,
+    path: "/china", 
+  },
+  {
+    url: "/images/india.webp",
+    title: "India",
+    id: 3,
+    path: "/india", 
+  },
+  {
+    url: "/images/malaysia.jpg",
+    title: "Malaysia",
+    id: 4,
+    path: "/malaysia", 
+  },
+  {
+    url: "/images/taiwan.jpg",
+    title: "Taiwan",
+    id: 5,
+    path: "/taiwan", 
+  },
+];

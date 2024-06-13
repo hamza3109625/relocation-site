@@ -12,9 +12,9 @@ const Newsletter = () => {
 
   return (
     
-    <div className='bg-gradient-to-r from-blue-400 to-purple-600' style={{backgroundImage:"url(/images/orange.jpg)"}}>
-    <div className="max-w-4xl mx-auto p-12 mt-6  ">
-      <h1 className="text-3xl font-semibold text-white mb-6 text-center">Subscribe to Our Newsletter</h1>
+    <div className='bg-gradient-to-r from-blue-400 to-purple-600 py-12' >
+    <div className="max-w-4xl mx-auto  mt-6 flex justify-between ">
+      <h1 className="text-3xl font-semibold text-black  text-center">Subscribe to Our Newsletter</h1>
       <form onSubmit={handleSubmit} className="flex items-center">
         <input
           type="email"

@@ -1,34 +1,28 @@
 
+
 import React from 'react';
+import { motion } from 'framer-motion';
 import AboutUs from '@/components/Home/AboutUs';
 import Background from '@/components/Home/Background';
 import Location from '@/components/Home/Location';
 import Newsletter from '@/components/Home/Newsletter';
 import Services from '@/components/Home/Services';
-import Parallax from '@/components/Home/Parallex';
-
-
-const isClient = typeof window !== "undefined";
+import transition from '@/animations/transition';
+import Footer from '@/components/Footer';
 
 const Home = () => {
   return (
     <div>
       <Background />
       <AboutUs />
-      <div className='mb-12'>
-      {isClient && (
-        <Parallax offset={50} clampInitial clampFinal>
-          <p>This content will have a parallax effect.</p>
-        </Parallax>
-      )}
-      </div>
-      <Newsletter />
       <Services />
+        <Location />
+      
+      <Newsletter />
+      <Footer />
     </div>
-    
-    
   );
 };
 
-export default Home;
+export default transition(Home);
 
