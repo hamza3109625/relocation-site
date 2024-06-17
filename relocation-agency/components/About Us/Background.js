@@ -62,7 +62,7 @@ const Background2 = () => {
   return (
     <main className="relative flex h-screen mb-screen overflow-hidden">
       <Image 
-        src="/images/background2.jpg"
+        src="/images/background3.jpg"
         fill
         alt="background"
         className="object-cover"

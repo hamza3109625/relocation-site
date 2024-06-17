@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Content() {
   return (
-    <div className='bg-amber-700 py-8 px-12 h-full w-full flex flex-col justify-between '>
+    <div className='bg-amber-500 py-8 px-12 h-full w-full flex flex-col justify-between '>
       <Section1 />
       <Section2 />
     </div>

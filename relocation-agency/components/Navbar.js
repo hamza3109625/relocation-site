@@ -26,6 +26,15 @@ const Navbar = () => {
   return (
     <nav className={`fixed w-full z-10 transition-colors duration-300 ${scrolled ? 'bg-gradient-to-r from-orange-100 to-orange-500' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div>
+        <div className="flex space-x-4 justify-end">
+            <PhoneNumberLink countryCode="+1" number="123-456-7890" />
+            <span>|</span>
+            <PhoneNumberLink countryCode="+44" number="987-654-3210" />
+            <span>|</span>
+            <PhoneNumberLink countryCode="+91" number="456-789-0123" />
+          </div>
+        </div>
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
             <Image 
@@ -36,7 +45,7 @@ const Navbar = () => {
               className="object-contain h-full"
             />
           </div>
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-5">
             <NavLink href="/">HOME</NavLink>
             <NavLink href="/about">ABOUT US</NavLink>
             <NavLink href="/contact">CONTACT US</NavLink>
@@ -86,7 +95,7 @@ const Navbar = () => {
       </div>
       {isOpen && (
         <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1">
+          <div className="px-2 pt-2 pb-3 space-y-2">
             <NavLink href="/">HOME</NavLink>
             <NavLink href="/about">ABOUT US</NavLink>
             <NavLink href="/contact">CONTACT US</NavLink>
@@ -108,4 +117,13 @@ const NavLink = ({ href, children }) => {
   );
 };
 
+const PhoneNumberLink = ({ countryCode, number }) => {
+  return (
+    <a href={`tel:${countryCode}${number}`} className="text-white">
+      {countryCode} {number}
+    </a>
+  );
+};
+
 export default Navbar;
+
