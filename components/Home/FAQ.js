@@ -5,19 +5,16 @@ import ImageReveal from "../ImageReveal";
 
 const FAQ = () => {
   return (
-    <section
-      id="faq"
-      className="w-full py-12 bg-orange-100 md:py-24 lg:py-32 dark:bg-orange-300"
-    >
+    <section id="faq" className="w-full py-12 md:py-24 lg:py-32 ">
       <div className="container px-4 md:px-6">
         {/* Header Section */}
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
             {/* <div className="inline-block px-3 py-1 text-sm bg-orange-300 rounded-lg dark:bg-orange-500">FAQ</div> */}
-            <Reveal className="text-3xl font-bold tracking-tighter text-gray-800 sm:text-5xl dark:text-white">
+            <Reveal className="text-3xl font-bold tracking-tighter text-gray-800 sm:text-5xl ">
               Frequently Asked Questions
             </Reveal>
-            <Reveal className="max-w-[900px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-200">
+            <Reveal className="max-w-[900px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed ">
               Get answers to the most common questions about our relocation
               services.
             </Reveal>
@@ -59,7 +56,7 @@ const CollapsibleItem = ({ question, answer }) => {
   return (
     <div className="grid gap-4">
       <div
-        className="flex items-center justify-between w-full px-4 py-3 text-lg font-semibold transition-colors bg-orange-300 rounded-md cursor-pointer hover:bg-orange-400 focus:bg-orange-400 dark:bg-orange-400 dark:hover:bg-orange-600 dark:focus:bg-orange-600"
+        className="flex items-center justify-between w-full px-4 py-3 text-lg font-semibold transition-colors border border-gray-200 rounded-md shadow-md cursor-pointer "
         onClick={() => setIsOpen(!isOpen)}
       >
         {question}
@@ -69,9 +66,7 @@ const CollapsibleItem = ({ question, answer }) => {
           }`}
         />
       </div>
-      {isOpen && (
-        <div className="px-4 py-3 text-gray-700 dark:text-white">{answer}</div>
-      )}
+      {isOpen && <div className="px-4 py-3 text-gray-950">{answer}</div>}
     </div>
   );
 };

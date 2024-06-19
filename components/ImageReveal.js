@@ -36,7 +36,7 @@ const ImageReveal = ({ src }) => {
     <div className="relative w-full h-full overflow-hidden">
       <div
         ref={revealRef}
-        className="absolute inset-0 z-10 bg-orange-300"
+        className="absolute inset-0 z-10 bg-white"
         style={{ width: "100%" }}
       ></div>
       <img

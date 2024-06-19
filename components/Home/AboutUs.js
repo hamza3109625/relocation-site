@@ -4,9 +4,9 @@ import Reveal from "../Reveal";
 
 const AboutUs = () => {
   return (
-    <section className="flex items-center justify-center py-16 bg-gradient-to-r from-orange-200 to-orange-300">
-      <div className="max-w-6xl p-10 text-center text-white rounded-lg">
-        <Reveal el="h1" className="text-5xl font-bold">
+    <section className="flex items-center justify-center py-16 ">
+      <div className="max-w-6xl p-10 text-center text-black rounded-lg">
+        <Reveal el="h1" className="mb-6 text-5xl font-bold">
           Unveiling the Journey
         </Reveal>
         <Reveal>
