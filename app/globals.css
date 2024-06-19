@@ -1,49 +1,34 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
-
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 
 html {
   scroll-behavior: smooth;
 }
 
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Hanken Grotesk", sans-serif; 
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-
-body {
-  font-family: Inter;
 }
 
 @layer utilities {
-  .btn_white { 
-    @apply  border-white bg-white px-8 py-3 text-green-50
+  .btn_white {
+    @apply px-8 py-3 bg-white border-white text-green-50;
   }
-  .btn_white_text  { 
-    @apply  border-white bg-white px-8 py-3 text-gray-90
+  .btn_white_text {
+    @apply px-8 py-3 bg-white border-white text-gray-90;
   }
-  .btn_green  { 
-    @apply  border-green-50 bg-green-50 px-8 py-5 text-white
+  .btn_green {
+    @apply px-8 py-5 text-white border-green-50 bg-green-50;
   }
-  .btn_dark_green { 
-    @apply  bg-green-90 px-8 py-4 text-white transition-all hover:bg-black
+  .btn_dark_green {
+    @apply px-8 py-4 text-white transition-all bg-green-90 hover:bg-black;
   }
-  .btn_dark_green_outline  { 
-    @apply border-gray-20 bg-green-90 px-8 py-5 text-white
+  .btn_dark_green_outline {
+    @apply px-8 py-5 text-white border-gray-20 bg-green-90;
   }
-  
+
   .max-container {
     @apply mx-auto max-w-[1250px] max-h-[1000px];
   }
@@ -139,7 +124,7 @@ body {
 
   /* Hero */
   .hero-map {
-    @apply absolute right-0 top-0 h-screen w-screen bg-pattern-2 bg-cover bg-center md:-right-28 xl:-top-60;
+    @apply absolute top-0 right-0 w-screen h-screen bg-center bg-cover bg-pattern-2 md:-right-28 xl:-top-60;
   }
 
   /* Camp */
@@ -169,8 +154,7 @@ body {
   scrollbar-width: none; /* Firefox */
 }
 
-
-.slide-in{
+.slide-in {
   position: fixed;
   top: 0;
   left: 0;
@@ -178,10 +162,9 @@ body {
   height: 100vh;
   background: #0f0f0f;
   transform-origin: bottom;
-
 }
 
-.slide-out{
+.slide-out {
   position: fixed;
   top: 0;
   left: 0;
@@ -189,5 +172,4 @@ body {
   height: 100vh;
   background: #0f0f0f;
   transform-origin: top;
-
 }

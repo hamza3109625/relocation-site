@@ -1,27 +1,28 @@
-'use client'
-import React, { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+"use client";
+import React from "react";
+import Reveal from "../Reveal";
 
 const AboutUs = () => {
-  useEffect(() => {
-    AOS.init({
-      duration: 2500, 
-      easing: 'ease-out', 
-      once: false, 
-    });
-  }, []);
-
   return (
-    <section className="bg-gradient-to-r from-orange-200 to-orange-300 flex justify-center items-center py-16">
-      <div
-        className="text-white p-10 rounded-lg max-w-6xl text-center"
-        data-aos="fade-up"
-      >
-        <h1 className="text-5xl font-bold mb-5 leading-loose">About Us</h1>
-        <p className="text-base leading-relaxed leading-loose">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sapien faucibus et molestie ac feugiat sed lectus. Sed enim ut sem viverra aliquet eget. Amet mauris commodo quis imperdiet massa tincidunt nunc pulvinar sapien. Placerat duis ultricies lacus sed turpis. Aliquam ultrices sagittis orci a scelerisque. Amet dictum sit amet justo donec enim diam vulputate ut. Leo a diam sollicitudin tempor id eu nisl. Pellentesque dignissim enim sit amet venenatis. Duis ut diam quam nulla porttitor massa id neque aliquam. Phasellus faucibus scelerisque eleifend donec pretium. Malesuada nunc vel risus commodo viverra maecenas. Posuere lorem ipsum dolor sit amet consectetur adipiscing elit. Porta non pulvinar neque laoreet.
-        </p>
+    <section className="flex items-center justify-center py-16 bg-gradient-to-r from-orange-200 to-orange-300">
+      <div className="max-w-6xl p-10 text-center text-white rounded-lg">
+        <Reveal el="h1" className="text-5xl font-bold">
+          Unveiling the Journey
+        </Reveal>
+        <Reveal>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Sapien
+          faucibus et molestie ac feugiat sed lectus. Sed enim ut sem viverra
+          aliquet eget. Amet mauris commodo quis imperdiet massa tincidunt nunc
+          pulvinar sapien. Placerat duis ultricies lacus sed turpis. Aliquam
+          ultrices sagittis orci a scelerisque. Amet dictum sit amet justo donec
+          enim diam vulputate ut. Leo a diam sollicitudin tempor id eu nisl.
+          Pellentesque dignissim enim sit amet venenatis. Duis ut diam quam
+          nulla porttitor massa id neque aliquam. Phasellus faucibus scelerisque
+          eleifend donec pretium. Malesuada nunc vel risus commodo viverra
+          maecenas. Posuere lorem ipsum dolor sit amet consectetur adipiscing
+          elit. Porta non pulvinar neque laoreet.
+        </Reveal>
       </div>
     </section>
   );
